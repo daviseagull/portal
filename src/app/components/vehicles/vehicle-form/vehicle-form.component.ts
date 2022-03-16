@@ -54,10 +54,6 @@ export class VehicleFormComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    if (this.form.invalid) {
-      return;
-    }
-
     this.createUser();
   }
 
@@ -66,6 +62,8 @@ export class VehicleFormComponent implements OnInit {
   }
 
   private createUser() {
+    this.form.controls['status'].enable();
+
     this.vehicleService
       .createVehicle(this.form.value)
       .pipe(first())
