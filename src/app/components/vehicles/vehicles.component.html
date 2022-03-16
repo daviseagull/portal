@@ -5,7 +5,7 @@
         <h1>Frotas</h1>
       </div>
       <div class="col text-end" id="button-header">
-        <button class="btn btn-dark" routerLink="/vehicle-form">Novo Veiculo</button>
+        <button class="btn btn-dark" routerLink="/vehicle-form/add">Novo Veiculo</button>
       </div>
     </div>
   </div>
@@ -32,7 +32,7 @@
               <td>{{vehicle?.model}}</td>
               <td>
                 <div class="text-center"> 
-                  <button class="btn btn-outline-dark btn-sm btn-table" routerLink="/vehicle-form">
+                  <button class="btn btn-outline-dark btn-sm btn-table" routerLink="/vehicle-form/view/{{vehicle?.id}}">
                     <i class="fa-solid fa-eye"></i>
                   </button>
                 </div>
@@ -62,7 +62,7 @@
               <td>{{vehicle?.model}}</td>
               <td>
                 <div class="text-center"> 
-                  <button class="btn btn-outline-dark btn-sm btn-table" routerLink="/vehicle-form">
+                  <button class="btn btn-outline-dark btn-sm btn-table" routerLink="/vehicle-form/view/{{vehicle?.id}}">
                     <i class="fa-solid fa-eye"></i>
                   </button>
                 </div>
@@ -74,3 +74,5 @@
     </div>
   </div>
 </div>
+
+<ng-http-loader></ng-http-loader>

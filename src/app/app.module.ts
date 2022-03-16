@@ -11,6 +11,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { RoutesComponent } from './components/routes/routes.component';
 import { VehicleFormComponent } from './components/vehicles/vehicle-form/vehicle-form.component';
+import { NgHttpLoaderModule } from 'ng-http-loader';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { VehicleFormComponent } from './components/vehicles/vehicle-form/vehicle
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgHttpLoaderModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
