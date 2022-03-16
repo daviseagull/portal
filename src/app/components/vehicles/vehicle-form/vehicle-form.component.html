@@ -1,0 +1,113 @@
+<div class="container-fluid">
+  <div class="container">
+    <h1 *ngIf="isAddMode">Adicionar veículo</h1>
+    <h1 *ngIf="!isAddMode">Visualizar veículo</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="row g-3">
+        <div class="form-group col-sm-4">
+          <label>Tipo</label>
+          <select formControlName="type" id="type" class="form-control form-select">
+            <option value="" selected disabled hidden>Selecione aqui</option>
+            <option value="Carro">Carro</option>
+            <option value="Van">Van</option>
+            <option value="ônibus">Ônibus</option>
+          </select>
+
+          <div *ngIf="form.controls['type'].invalid && (form.controls['type'].dirty || form.controls['type'].touched)" class="alert alert-danger">
+            <div *ngIf="form.controls['type'].errors?.['required']">
+              <i class="fa-solid fa-circle-exclamation"></i> Tipo é obrigatório.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-4">
+            <label>Status</label>
+            <select formControlName="status" class="form-control form-select">
+              <option value="" selected disabled hidden>Selecione aqui</option>
+              <option value="Disponível">Disponível</option>
+              <option value="Indisponível">Indisponível</option>
+            </select>
+
+            <div *ngIf="form.controls['status'].invalid && (form.controls['status'].dirty || form.controls['status'].touched)" class=" alert alert-danger">
+              <div *ngIf="form.controls['status'].errors?.['required']">
+                <i class="fa-solid fa-circle-exclamation"></i> Status é obrigatório.
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-4">
+          <label>Qtd. assentos</label>
+          <select formControlName="seatQuantity" class="form-control form-select">
+            <option value="" selected disabled hidden>Selecione aqui</option>
+            <option value="5">5</option>
+            <option value="7">7</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+          </select>
+
+          <div *ngIf="form.controls['seatQuantity'].invalid && (form.controls['seatQuantity'].dirty || form.controls['seatQuantity'].touched)" class=" alert alert-danger">
+            <div *ngIf="form.controls['seatQuantity'].errors?.['required']">
+              <i class="fa-solid fa-circle-exclamation"></i> Qtd. assentos é obrigatório.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+            <label>Ano</label>
+            <input type="number" formControlName="year" class="form-control" min="2000" max="{{year}}"/>
+
+            <div *ngIf="form.controls['year'].invalid && (form.controls['year'].dirty || form.controls['year'].touched)" class=" alert alert-danger">
+              <div *ngIf="form.controls['year'].errors?.['required']">
+                <i class="fa-solid fa-circle-exclamation"></i> Ano é obrigatório.
+              </div>
+              <div *ngIf="form.controls['year'].errors?.['min']">
+                <i class="fa-solid fa-circle-exclamation"></i> Ano deve ser maior que 2000.
+              </div>
+
+              <div *ngIf="form.controls['year'].errors?.['max']">
+                <i class="fa-solid fa-circle-exclamation"></i> Ano deve ser menor que {{year}}.
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+          <label>Cor</label>
+          <input type="text" formControlName="color" class="form-control"/>
+
+          <div *ngIf="form.controls['color'].invalid && (form.controls['color'].dirty || form.controls['color'].touched)" class=" alert alert-danger">
+            <div *ngIf="form.controls['color'].errors?.['required']">
+              <i class="fa-solid fa-circle-exclamation"></i> Cor é obrigatório.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+          <label>Modelo</label>
+          <input type="text" formControlName="model" class="form-control"/>
+
+          <div *ngIf="form.controls['model'].invalid && (form.controls['model'].dirty || form.controls['model'].touched)" class=" alert alert-danger">
+            <div *ngIf="form.controls['model'].errors?.['required']">
+              <i class="fa-solid fa-circle-exclamation"></i> Modelo é obrigatório.
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group col-sm-6">
+          <label>Marca</label>
+          <input type="text" formControlName="brand" class="form-control"/>
+
+          <div *ngIf="form.controls['brand'].invalid && (form.controls['brand'].dirty || form.controls['brand'].touched)" class=" alert alert-danger">
+            <div *ngIf="form.controls['brand'].errors?.['required']">
+              <i class="fa-solid fa-circle-exclamation"></i> Marca é obrigatório.
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="text-center" id="button-group" >
+          <button type="submit" class="btn btn-success" [disabled]="!form.valid">Save</button>
+          <a routerLink="/users" class="btn btn-secondary" (click)="onCancel()">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>

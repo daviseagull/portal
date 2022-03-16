@@ -5,7 +5,7 @@
         <h1>Frotas</h1>
       </div>
       <div class="col text-end" id="button-header">
-        <button class="btn btn-dark">Novo Veiculo</button>
+        <button class="btn btn-dark" routerLink="/vehicle-form">Novo Veiculo</button>
       </div>
     </div>
   </div>
@@ -32,8 +32,9 @@
               <td>{{vehicle?.model}}</td>
               <td>
                 <div class="text-center"> 
-                  <button class="btn btn-outline-dark btn-sm btn-table"><i class="fa-solid fa-eye"></i></button>
-                  <button class="btn btn-outline-dark btn-sm btn-table"><i class="fa-solid fa-pen"></i></button>
+                  <button class="btn btn-outline-dark btn-sm btn-table" routerLink="/vehicle-form">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
                 </div>
               </td>
             </tr>
@@ -61,15 +62,15 @@
               <td>{{vehicle?.model}}</td>
               <td>
                 <div class="text-center"> 
-                  <button class="btn btn-outline-dark btn-sm btn-table"><i class="fa-solid fa-eye"></i></button>
-                  <button class="btn btn-outline-dark btn-sm btn-table"><i class="fa-solid fa-pen"></i></button>
+                  <button class="btn btn-outline-dark btn-sm btn-table" routerLink="/vehicle-form">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
                 </div>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-
     </div>
   </div>
 </div>
