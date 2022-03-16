@@ -104,10 +104,16 @@
         </div>
 
       </div>
-      <div class="text-center" id="button-group" >
-          <button type="submit" class="btn btn-success" [disabled]="!form.valid">Save</button>
-          <a routerLink="/users" class="btn btn-secondary" (click)="onCancel()">Cancel</a>
+      <div *ngIf="isAddMode" class="text-center" id="button-group" >
+          <button type="submit" class="btn btn-success" [disabled]="!form.valid">Salvar</button>
+          <a routerLink="/users" class="btn btn-secondary" (click)="onCancel()">Cancelar</a>
       </div>
+
+      <div *ngIf="!isAddMode" class="text-center" id="button-group" >
+        <button class="btn btn-dark">Voltar</button>
+    </div>
     </form>
   </div>
 </div>
+
+<ng-http-loader></ng-http-loader>

@@ -9,7 +9,8 @@ import { VehiclesComponent } from './components/vehicles/vehicles.component';
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'vehicles', component: VehiclesComponent },
-  { path: 'vehicle-form', component: VehicleFormComponent },
+  { path: 'vehicle-form/add', component: VehicleFormComponent },
+  { path: 'vehicle-form/view/:id', component: VehicleFormComponent },
   { path: 'routes', component: RoutesComponent },
 ];
 
