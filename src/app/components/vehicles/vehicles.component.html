@@ -5,7 +5,7 @@
         <h1>Frotas</h1>
       </div>
       <div class="col text-end" id="button-header">
-        <button class="btn btn-dark">Novo Veiculo</button>
+        <button class="btn btn-dark" routerLink="/vehicle-form">Novo Veiculo</button>
       </div>
     </div>
   </div>
@@ -21,6 +21,7 @@
               <th scope="col">Status</th>
               <th scope="col">Qtd. assentos</th>
               <th scope="col">Modelo</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -29,13 +30,20 @@
               <td>{{vehicle?.status}}</td>
               <td>{{vehicle?.seatQuantity}}</td>
               <td>{{vehicle?.model}}</td>
+              <td>
+                <div class="text-center"> 
+                  <button class="btn btn-outline-dark btn-sm btn-table" routerLink="/vehicle-form">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <div class="col">
-        <h3 class="text-muted">Frotas em espera</h3>
+        <h3 class="text-muted">Frotas em uso</h3>
         <table class="table">
           <thead class="thead-dark">
             <tr>
@@ -43,6 +51,7 @@
               <th scope="col">Status</th>
               <th scope="col">Qtd. assentos</th>
               <th scope="col">Modelo</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -51,11 +60,17 @@
               <td>{{vehicle?.status}}</td>
               <td>{{vehicle?.seatQuantity}}</td>
               <td>{{vehicle?.model}}</td>
+              <td>
+                <div class="text-center"> 
+                  <button class="btn btn-outline-dark btn-sm btn-table" routerLink="/vehicle-form">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
-
     </div>
   </div>
 </div>
