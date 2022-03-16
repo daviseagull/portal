@@ -6,8 +6,7 @@ import { RoutesComponent } from './routes/routes.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 
 const routes: Routes = [
-  { path: '#', component: AppComponent },
-  { path: 'homepage', component: HomepageComponent },
+  { path: '', component: HomepageComponent },
   { path: 'vehicles', component: VehiclesComponent },
   { path: 'routes', component: RoutesComponent },
 ];

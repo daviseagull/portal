@@ -21,6 +21,7 @@
               <th scope="col">Status</th>
               <th scope="col">Qtd. assentos</th>
               <th scope="col">Modelo</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -29,13 +30,19 @@
               <td>{{vehicle?.status}}</td>
               <td>{{vehicle?.seatQuantity}}</td>
               <td>{{vehicle?.model}}</td>
+              <td>
+                <div class="text-center"> 
+                  <button class="btn btn-outline-dark btn-sm btn-table"><i class="fa-solid fa-eye"></i></button>
+                  <button class="btn btn-outline-dark btn-sm btn-table"><i class="fa-solid fa-pen"></i></button>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <div class="col">
-        <h3 class="text-muted">Frotas em espera</h3>
+        <h3 class="text-muted">Frotas em uso</h3>
         <table class="table">
           <thead class="thead-dark">
             <tr>
@@ -43,6 +50,7 @@
               <th scope="col">Status</th>
               <th scope="col">Qtd. assentos</th>
               <th scope="col">Modelo</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -51,6 +59,12 @@
               <td>{{vehicle?.status}}</td>
               <td>{{vehicle?.seatQuantity}}</td>
               <td>{{vehicle?.model}}</td>
+              <td>
+                <div class="text-center"> 
+                  <button class="btn btn-outline-dark btn-sm btn-table"><i class="fa-solid fa-eye"></i></button>
+                  <button class="btn btn-outline-dark btn-sm btn-table"><i class="fa-solid fa-pen"></i></button>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
