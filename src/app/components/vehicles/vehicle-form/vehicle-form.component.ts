@@ -48,6 +48,8 @@ export class VehicleFormComponent implements OnInit {
         .getById(this.id)
         .pipe(first())
         .subscribe((x) => this.form.patchValue(x));
+
+      this.form.disable();
     }
   }
 
