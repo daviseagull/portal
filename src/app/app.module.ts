@@ -12,6 +12,7 @@ import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { RoutesComponent } from './components/routes/routes.component';
 import { VehicleFormComponent } from './components/vehicles/vehicle-form/vehicle-form.component';
 import { NgHttpLoaderModule } from 'ng-http-loader';
+import { RouteFormComponent } from './components/routes/route-form/route-form.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     VehiclesComponent,
     RoutesComponent,
     VehicleFormComponent,
+    RouteFormComponent,
   ],
   imports: [
     BrowserModule,

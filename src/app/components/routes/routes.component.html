@@ -5,7 +5,7 @@
         <h1>Rotas</h1>
       </div>
       <div class="col text-end" id="button-header">
-        <button class="btn btn-dark">Nova Rota</button>
+        <button class="btn btn-dark" routerLink="/route-form/add">Nova Rota</button>
       </div>
     </div>
   </div>
@@ -13,118 +13,107 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <h3 class="text-muted">Rotas para iniciar</h3>
+        <h3 class="text-muted">Rotas em espera</h3>
         <table class="table">
           <thead class="thead-dark">
-            <tr>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-              <th scope="col">First</th>
-              <th scope="col">Second</th>
-            </tr>
+          <tr>
+            <th scope="col">Status</th>
+            <th scope="col">Endereço de início</th>
+            <th scope="col">Endereço de término</th>
+            <th scope="col">Horário de início</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Qtd. passageiros</th>
+            <th scope="col"></th>
+          </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-            </tr>
+          <tr *ngFor="let route of waitingRoutes">
+            <td>{{route?.status}}</td>
+            <td>{{route?.startAddress}}</td>
+            <td>{{route?.endAddress}}</td>
+            <td>{{route?.startTimestamp}}</td>
+            <td>{{route?.price}}</td>
+            <td>{{route?.passengerQuantity}}</td>
+            <td>
+              <div class="text-center">
+                <button class="btn btn-outline-dark btn-sm btn-table" routerLink="/route-form/view/{{route?.id}}">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
           </tbody>
         </table>
       </div>
-      <div class="col">
-        <h3 class="text-muted">Rotas em andamento</h3>
 
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-              <th scope="col">First</th>
-              <th scope="col">Second</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
       <div class="col">
-        <h3 class="text-muted">Rotas finalizadas</h3>
-
+        <h3 class="text-muted">Rotas em progresso</h3>
         <table class="table">
           <thead class="thead-dark">
-            <tr>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-              <th scope="col">First</th>
-              <th scope="col">Second</th>
-            </tr>
+          <tr>
+            <th scope="col">Status</th>
+            <th scope="col">Endereço de início</th>
+            <th scope="col">Endereço de término</th>
+            <th scope="col">Horário de início</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Qtd. passageiros</th>
+            <th scope="col"></th>
+          </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-            </tr>
+          <tr *ngFor="let route of inProgressRoutes">
+            <td>{{route?.status}}</td>
+            <td>{{route?.startAddress}}</td>
+            <td>{{route?.endAddress}}</td>
+            <td>{{route?.startTimestamp}}</td>
+            <td>{{route?.price}}</td>
+            <td>{{route?.passengerQuantity}}</td>
+            <td>
+              <div class="text-center">
+                <button class="btn btn-outline-dark btn-sm btn-table" routerLink="/route-form/view/{{route?.id}}">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
           </tbody>
         </table>
       </div>
+
+      <div class="col">
+        <h3 class="text-muted">Rotas em finalizadas</h3>
+        <table class="table">
+          <thead class="thead-dark">
+          <tr>
+            <th scope="col">Status</th>
+            <th scope="col">Endereço de início</th>
+            <th scope="col">Endereço de término</th>
+            <th scope="col">Horário de início</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Qtd. passageiros</th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let route of endedRoutes">
+            <td>{{route?.status}}</td>
+            <td>{{route?.startAddress}}</td>
+            <td>{{route?.endAddress}}</td>
+            <td>{{route?.startTimestamp}}</td>
+            <td>{{route?.price}}</td>
+            <td>{{route?.passengerQuantity}}</td>
+            <td>
+              <div class="text-center">
+                <button class="btn btn-outline-dark btn-sm btn-table" routerLink="/route-form/view/{{route?.id}}">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
   </div>
 </div>
